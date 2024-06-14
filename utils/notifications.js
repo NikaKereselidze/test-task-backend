@@ -1,7 +1,6 @@
 const { sendEmail } = require("./email");
 
 exports.sendExpireNotice = async (email, name) => {
-  console.log(email);
   await sendEmail({
     email,
     subject: `${name} is going to expire soon`,
