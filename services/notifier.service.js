@@ -1,5 +1,5 @@
-const History = require("../models/History.model");
-const Product = require("../models/Product.model");
+const History = require("../database/models/History.model");
+const Product = require("../database/models/Product.model");
 const { agenda, expire } = require("../utils/agendajobs");
 const mongoose = require("mongoose");
 

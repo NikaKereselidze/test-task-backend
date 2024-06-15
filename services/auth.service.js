@@ -1,4 +1,4 @@
-const User = require("../models/User.model");
+const User = require("../database/models/User.model");
 const {
   UserAlreadyExist,
   InvalidCredentials,

@@ -1,7 +1,7 @@
 const { Agenda } = require("agenda");
 const { sendExpireNotice } = require("./notifications");
 const moment = require("moment");
-const Product = require("../models/Product.model");
+const Product = require("../database/models/Product.model");
 
 const mongoDbUrl = process.env.MONGO_URI;
 

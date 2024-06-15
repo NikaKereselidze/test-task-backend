@@ -1,5 +1,5 @@
-const History = require("../models/History.model");
-const User = require("../models/User.model");
+const History = require("../database/models/History.model");
+const User = require("../database/models/User.model");
 
 exports.getHistoryService = async () => {
   try {
