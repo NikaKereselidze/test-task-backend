@@ -10,6 +10,7 @@ exports.addProductService = async (email, expiresAt, name, authorId) => {
       expiresAt,
       name,
       authorId,
+      status: "active",
     });
 
     await History.create({

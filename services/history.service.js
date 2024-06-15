@@ -5,12 +5,14 @@ exports.getHistoryService = async () => {
   try {
     const history = await History.find().sort({ createdAt: -1 });
 
-    let user;
-    for (let i = 0; i < history.length; i++) {
-      user = await User.findById(history[i].userId, { password: 0 });
-      history[i]._doc.user = user;
-    }
-    return history;
+    const histories = await Promise.all(
+      history.map(async (history) => {
+        const user = await User.findById(history.userId, { password: 0 });
+        const historyObj = history.toObject();
+        return { ...historyObj, user };
+      })
+    );
+    return histories;
   } catch (err) {
     console.log(err);
     throw err;
